@@ -6,3 +6,4 @@ link to record task-5 - https://asciinema.org/a/DVXDUxwkZwAsg6bjTTzvBU1X1
 link to record task-6 - https://asciinema.org/a/unt2QAHa2aZeAU6EzeVLdj70H
 link to record task-7 - https://asciinema.org/a/ktQ0KSNuxUi0H26nhvEutQxLg
 link to record task-8 - https://asciinema.org/a/mxrsTFzlprrnyT3hiyWUUTL9E
+link to record task-9 - https://asciinema.org/a/3hdzorNzvQ6sbgE0BVSMURqg9

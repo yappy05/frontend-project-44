@@ -36,8 +36,8 @@ const makeTry = (arg, correct, uncorrect) => {
 const congratulations = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
-const uncorrectAnswer = (answerTrue, answerFalse) => {
-  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}'`;
+const uncorrectAnswer = (answerTrue, answerFalse, name = "Sergey") => {
+  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}.\nLet\'s try again, ${name}!`;
 };
 
 export {
