@@ -7,6 +7,9 @@ const knowName = () => {
 const greeting = () => {
   console.log("Welcome to the Brain Games!");
 };
+const greetingWithName = (name) => {
+  console.log(`Hello, ${name}!`);
+};
 const question = (qs) => {
   console.log(`Question: ${qs}`);
 };
@@ -20,4 +23,32 @@ const randomNum = (num) => {
   return Math.floor(Math.random() * num);
 };
 
-export { knowName, greeting, question, answer, compareAnswer, randomNum };
+const makeTry = (arg, correct, uncorrect) => {
+  let flag = true;
+  if (!arg) {
+    flag = false;
+    console.log(uncorrect);
+  } else {
+    console.log(correct);
+  }
+  return flag;
+};
+const congratulations = (name) => {
+  console.log(`Congratulations, ${name}!`);
+};
+const uncorrectAnswer = (answerTrue, answerFalse) => {
+  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}')`;
+};
+
+export {
+  knowName,
+  greeting,
+  question,
+  answer,
+  compareAnswer,
+  randomNum,
+  greetingWithName,
+  makeTry,
+  uncorrectAnswer,
+  congratulations,
+};

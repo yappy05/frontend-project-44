@@ -12,15 +12,15 @@ for (let i = 0; i < 3; i++) {
   num1 = defaultMethods.randomNum(10);
   num2 = defaultMethods.randomNum(10);
   switch (defaultMethods.randomNum(3)) {
-    case 1:
+    case 0:
       num = num1 + num2;
       numStr = num1 + " + " + num2;
       break;
-    case 2:
+    case 1:
       num = num1 - num2;
       numStr = num1 + " - " + num2;
       break;
-    case 3:
+    case 2:
       num = num1 * num2;
       numStr = num1 + " * " + num2;
       break;
