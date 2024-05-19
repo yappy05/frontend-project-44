@@ -37,7 +37,7 @@ const congratulations = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 const uncorrectAnswer = (answerTrue, answerFalse) => {
-  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}')`;
+  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}'`;
 };
 
 export {
