@@ -22,7 +22,8 @@ for (let i = 0; i < 3; i++) {
     "Correct!",
     defaultMethods.uncorrectAnswer(
       answer == "yes" ? "no" : "yes",
-      answer == "no" ? "no" : "yes"
+      answer == "no" ? "no" : "yes",
+      name
     )
   );
 

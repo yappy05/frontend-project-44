@@ -42,7 +42,8 @@ for (let i = 0; i < 3; i++) {
   flag = defaultMethods.makeTry(
     answer == nodCompare,
     "Correct!",
-    defaultMethods.uncorrectAnswer(nodCompare, answer)
+    defaultMethods.uncorrectAnswer(nodCompare, answer),
+    name
   );
   //если ответ хотя бы раз был не правильным то прерываем цикл
   if (!flag) break;
