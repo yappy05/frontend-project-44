@@ -24,6 +24,7 @@ const findMaxNod = (arrayDivider1, arrayDivider2) => {
 
 defaultMethods.greeting();
 let name = defaultMethods.knowName();
+console.log("Find the greatest common divisor of given numbers.");
 let flag;
 for (let i = 0; i < 3; i++) {
   //создаем 2 случайных числа

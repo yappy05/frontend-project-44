@@ -23,9 +23,9 @@ const randomNum = (num) => {
   return Math.floor(Math.random() * num);
 };
 
-const makeTry = (arg, correct, uncorrect) => {
+const makeTry = (func, correct = "Correct!", uncorrect) => {
   let flag = true;
-  if (!arg) {
+  if (!func) {
     flag = false;
     console.log(uncorrect);
   } else {
@@ -37,7 +37,7 @@ const congratulations = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 const uncorrectAnswer = (answerTrue, answerFalse, name = "Sergey") => {
-  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}.\nLet\'s try again, ${name}!`;
+  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}'.\nLet's try again, ${name}!`;
 };
 
 export {

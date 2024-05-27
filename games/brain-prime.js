@@ -20,7 +20,11 @@ for (let i = 0; i < 3; i++) {
   flag = defaultMethods.makeTry(
     answer == numPrime,
     "Correct!",
-    defaultMethods.uncorrectAnswer(numPrime, answer, name)
+    defaultMethods.uncorrectAnswer(
+      answer ? "no" : "yes",
+      answer ? "yes" : "no",
+      name
+    )
   );
   if (!flag) break;
 }

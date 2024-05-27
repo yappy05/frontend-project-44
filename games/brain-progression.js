@@ -42,7 +42,7 @@ for (let i = 0; i < 3; i++) {
   flag = defaultMethods.makeTry(
     answer == num,
     "Correct!",
-    defaultMethods.uncorrectAnswer(num, answer)
+    defaultMethods.uncorrectAnswer(num, answer, name)
   );
   //Если ответ будет неправильным flag = false, то мы вайдим из цикла
   if (!flag) break;
