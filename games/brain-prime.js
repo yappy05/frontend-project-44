@@ -17,9 +17,9 @@ for (let j = 0; j < 3; j += 1) {
   const numPrime = isPrime(randomNum);
   defaultMethods.questionMy(randomNum);
   const answer = defaultMethods.answerMy() === 'yes';
+  // console.log(`answer = ${answer}, prime = ${numPrime}`);
   flag = defaultMethods.makeTry(
     answer === numPrime,
-    'Correct!',
     defaultMethods.uncorrectAnswer(
       answer ? 'no' : 'yes',
       answer ? 'yes' : 'no',

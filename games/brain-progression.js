@@ -2,6 +2,7 @@
 import * as defaultMethods from '../src/index.js';
 
 // создаем массив с прогрессией
+// console.log(Object.is("13", "14"));
 const createProgression = () => {
   const array = [];
   let numDiff = defaultMethods.randomNum(10);
@@ -47,8 +48,7 @@ for (let j = 0; j < 3; j += 1) {
   const answer = defaultMethods.answerMy();
   // если наш ответ будет правильным то flag останеться true и вывведеться "Correct!"
   flag = defaultMethods.makeTry(
-    answer === num,
-    'Correct!',
+    answer.toString() === num.toString(),
     defaultMethods.uncorrectAnswer(num, answer, name),
   );
   // Если ответ будет неправильным flag = false, то мы вайдим из цикла

@@ -15,10 +15,13 @@ const questionMy = (qs) => {
   console.log(`Question: ${qs}`);
 };
 const answerMy = () => readlineSync.question('Your answer: ');
-const compareAnswer = (question, answer) => question === answer;
+// const answerMyNum = () => parseInt(readlineSync.question('Your answer: '));
+const compareAnswer = (question, answer) => {
+  if (toString(question) === toString(answer)) return true;
+  return false;
+};
 const randomNum = (num) => Math.floor(Math.random() * num);
 
-// я менял его const makeTry = (func, uncorrect, correct = "Correct!")
 const makeTry = (func, uncorrect) => {
   let flag = true;
   if (!func) {
@@ -32,7 +35,7 @@ const makeTry = (func, uncorrect) => {
 const congratulations = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
-const uncorrectAnswer = (answerTrue, answerFalse, name) => `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}'.\nLet's try again, ${name}!`;
+const uncorrectAnswer = (answerTrue, answerFalse, name) => `'${answerFalse}' is wrong answer. Correct answer is '${answerTrue}'.\nLet's try again, ${name}!`;
 
 export {
   knowName,

@@ -51,7 +51,7 @@ for (let l = 0; l < 3; l += 1) {
   const answer = defaultMethods.answerMy();
   // проверяем правильность ответa
   flag = defaultMethods.makeTry(
-    answer !== nodCompare,
+    answer.toString() === nodCompare.toString(),
     defaultMethods.uncorrectAnswer(nodCompare, answer, name),
   );
   // если ответ хотя бы раз был не правильным то прерываем цикл

@@ -30,7 +30,7 @@ for (let i = 0; i < 3; i += 1) {
   }
   defaultMethods.questionMy(calculateNumStr);
   const answer = defaultMethods.answerMy();
-  if (defaultMethods.compareAnswer(calculateNum, answer)) {
+  if (calculateNum.toString() === String(answer)) {
     console.log('Correct!');
   } else {
     console.log(
