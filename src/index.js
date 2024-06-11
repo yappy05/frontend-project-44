@@ -1,50 +1,44 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+
 const knowName = () => {
-  const name = readlineSync.question("May I have your name? ");
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
 };
 const greeting = () => {
-  console.log("Welcome to the Brain Games!");
+  console.log('Welcome to the Brain Games!');
 };
 const greetingWithName = (name) => {
   console.log(`Hello, ${name}!`);
 };
-const question = (qs) => {
+const questionMy = (qs) => {
   console.log(`Question: ${qs}`);
 };
-const answer = () => {
-  return readlineSync.question("Your answer: ");
-};
-const compareAnswer = (question, answer) => {
-  return question == answer ? true : false;
-};
-const randomNum = (num) => {
-  return Math.floor(Math.random() * num);
-};
+const answerMy = () => readlineSync.question('Your answer: ');
+const compareAnswer = (question, answer) => question === answer;
+const randomNum = (num) => Math.floor(Math.random() * num);
 
-const makeTry = (func, correct = "Correct!", uncorrect) => {
+// я менял его const makeTry = (func, uncorrect, correct = "Correct!")
+const makeTry = (func, uncorrect) => {
   let flag = true;
   if (!func) {
     flag = false;
     console.log(uncorrect);
   } else {
-    console.log(correct);
+    console.log('Correct!');
   }
   return flag;
 };
 const congratulations = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
-const uncorrectAnswer = (answerTrue, answerFalse, name) => {
-  return `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}'.\nLet's try again, ${name}!`;
-};
+const uncorrectAnswer = (answerTrue, answerFalse, name) => `'${answerFalse}' is wrong answer ;(. Correct answer is '${answerTrue}'.\nLet's try again, ${name}!`;
 
 export {
   knowName,
   greeting,
-  question,
-  answer,
+  questionMy,
+  answerMy,
   compareAnswer,
   randomNum,
   greetingWithName,

@@ -1,30 +1,30 @@
 #!/usr/bin/env node
-import * as defaultMethods from "./../src/index.js";
+import * as defaultMethods from '../src/index.js';
 
 const isPrime = (num) => {
-  for (let i = 2; i < num; i++) {
-    if (num % i == 0) return false;
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) return false;
   }
   return true;
 };
 
 defaultMethods.greeting();
-let name = defaultMethods.knowName();
+const name = defaultMethods.knowName();
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 let flag;
-for (let i = 0; i < 3; i++) {
-  let randomNum = defaultMethods.randomNum(10);
-  let numPrime = isPrime(randomNum);
-  defaultMethods.question(randomNum);
-  let answer = defaultMethods.answer() == "yes" ? true : false;
+for (let j = 0; j < 3; j += 1) {
+  const randomNum = defaultMethods.randomNum(10);
+  const numPrime = isPrime(randomNum);
+  defaultMethods.questionMy(randomNum);
+  const answer = defaultMethods.answerMy() === 'yes';
   flag = defaultMethods.makeTry(
-    answer == numPrime,
-    "Correct!",
+    answer === numPrime,
+    'Correct!',
     defaultMethods.uncorrectAnswer(
-      answer ? "no" : "yes",
-      answer ? "yes" : "no",
-      name
-    )
+      answer ? 'no' : 'yes',
+      answer ? 'yes' : 'no',
+      name,
+    ),
   );
   if (!flag) break;
 }

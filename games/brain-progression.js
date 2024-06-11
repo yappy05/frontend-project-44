@@ -1,51 +1,58 @@
 #!/usr/bin/env node
-import * as defaultMethods from "./../src/index.js";
+import * as defaultMethods from '../src/index.js';
 
-//создаем массив с прогрессией
+// создаем массив с прогрессией
 const createProgression = () => {
   const array = [];
   let numDiff = defaultMethods.randomNum(10);
-  numDiff == 0 ? (numDiff = 1) : null;
+  if (numDiff === 0) numDiff = 1;
+  // numDiff == 0 ? (numDiff = 1) : null;
   let num = defaultMethods.randomNum(50);
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i += 1) {
     array.push(num);
     num += numDiff;
   }
   return array;
 };
-//создаем случайно число, и меняем элемент массива с этим числом на ".."
-const hideNum = (array) => {
-  let randomNum = defaultMethods.randomNum(array.length - 1);
-  let invisibleNum = array[randomNum];
-  array[randomNum] = "..";
-  return invisibleNum;
-};
+// создаем случайно число, и меняем элемент массива с этим числом на ".."
+// const hideNum = (array) => {
+//   const randomNum = defaultMethods.randomNum(array.length - 1);
+// let invisibleNum = array[randomNum];
+// array[randomNum] = "..";
+//   return randomNum;
+// };
 
 defaultMethods.greeting();
-let name = defaultMethods.knowName();
-console.log("What number is missing in the progression?");
+const name = defaultMethods.knowName();
+console.log('What number is missing in the progression?');
 let flag;
-for (let i = 0; i < 3; i++) {
+for (let j = 0; j < 3; j += 1) {
   const arr = createProgression();
-  let num = hideNum(arr);
+  const unlessnum = defaultMethods.randomNum(arr.length - 1);
+  const num = arr[unlessnum];
+  arr[unlessnum] = '..';
 
-  //преобразуем массив в строку
-  let progression = "";
-  for (const num of arr) {
-    progression += num + " ";
+  // преобразуем массив в строку
+  let progression = '';
+
+  for (let k = 0; k < arr.length; k += 1) {
+    progression += `${arr[k]} `;
   }
-  //задаем вопрос
-  defaultMethods.question(progression);
-  //получаем ответ на вопрос
-  let answer = defaultMethods.answer();
-  //если наш ответ будет правильным то flag останеться true и вывведеться "Correct!"
+  // for (const num of arr) {
+  //   progression += `${num} `;
+  // }
+  // задаем вопрос
+  defaultMethods.questionMy(progression);
+  // получаем ответ на вопрос
+  const answer = defaultMethods.answerMy();
+  // если наш ответ будет правильным то flag останеться true и вывведеться "Correct!"
   flag = defaultMethods.makeTry(
-    answer == num,
-    "Correct!",
-    defaultMethods.uncorrectAnswer(num, answer, name)
+    answer === num,
+    'Correct!',
+    defaultMethods.uncorrectAnswer(num, answer, name),
   );
-  //Если ответ будет неправильным flag = false, то мы вайдим из цикла
+  // Если ответ будет неправильным flag = false, то мы вайдим из цикла
   if (!flag) break;
 }
-//Если все ответы были правильными, то поздравляем игрока!
+// Если все ответы были правильными, то поздравляем игрока!
 if (flag) defaultMethods.congratulations(name);
