@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import * as defaultMethods from '../src/index.js';
+import * as defaultMethods from "../src/index.js";
 
 const nod = (num) => {
   const countDivider = [];
@@ -33,7 +33,7 @@ const findMaxNod = (arrayDivider1, arrayDivider2) => {
 
 defaultMethods.greeting();
 const name = defaultMethods.knowName();
-console.log('Find the greatest common divisor of given numbers.');
+console.log("Find the greatest common divisor of given numbers.");
 let flag;
 for (let l = 0; l < 3; l += 1) {
   // создаем 2 случайных числа
@@ -42,7 +42,7 @@ for (let l = 0; l < 3; l += 1) {
   if (num1 === 0) num1 = 1;
   const num2 = defaultMethods.randomNum(30);
   // num2 == 0 ? (num2 = 1) : null;
-  if (num1 === 0) num1 = 2;
+  if (num2 === 0) num1 = 1;
   // находим наибольший общий делитель
   const nodCompare = findMaxNod(nod(num1), nod(num2));
   // задаем вопрос с примером
@@ -52,7 +52,7 @@ for (let l = 0; l < 3; l += 1) {
   // проверяем правильность ответa
   flag = defaultMethods.makeTry(
     answer.toString() === nodCompare.toString(),
-    defaultMethods.uncorrectAnswer(nodCompare, answer, name),
+    defaultMethods.uncorrectAnswer(nodCompare, answer, name)
   );
   // если ответ хотя бы раз был не правильным то прерываем цикл
   if (!flag) break;
