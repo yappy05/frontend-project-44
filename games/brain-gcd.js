@@ -42,7 +42,7 @@ for (let l = 0; l < 3; l += 1) {
   if (num1 === 0) num1 = 1;
   const num2 = defaultMethods.randomNum(30);
   // num2 == 0 ? (num2 = 1) : null;
-  if (num2 === 0) num1 = 1;
+  if (num2 === 0) num2 = 1;
   // находим наибольший общий делитель
   const nodCompare = findMaxNod(nod(num1), nod(num2));
   // задаем вопрос с примером
